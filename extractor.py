@@ -34,15 +34,18 @@ else:
 
 tokens = word_tokenize(text)
 contador = 0
-codigosFlex = ''
+codigosFlex = []
 for palabra in tokens:
     if (palabra.startswith('41')) and len(palabra) > 6 and not (palabra.endswith('Mercado')):
         contador += 1
-        codigosFlex += palabra + '\n'
+        codigosFlex.append(palabra)
         print(palabra)
 
 print('Cantidad de registros: ', contador)
-# Domicilio RESIDENCIALVenta: 20000 04817834564 Envio: 419174 13044 Venta: 20000 04817831656 Envio: 419174 12272Despacha tu producto cuanto antes ¡No te relajes! Tu comprador lo está esperando.
-pyperclip.copy(codigosFlex)
+
+pyperclip.copy(' '.join(str(e + '\n') for e in codigosFlex))
 spam = pyperclip.paste()
-input('Codigos copiados en tu portapapeles. Presione ENTER para salir  ....')
+
+input('Codigos copiados en tu portapapeles. Presione ENTER para salir  ....\n')
+
+print(codigosFlex)
