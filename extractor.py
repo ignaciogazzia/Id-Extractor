@@ -7,6 +7,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from tkinter import Tk     # from tkinter import Tk for Python 3.x
 from tkinter.filedialog import askopenfilename
+from meli_notification import send_meli_shipment_notification
 
 Tk().withdraw()  # we don't want a full GUI, so keep the root window from appearing
 # show an "Open" dialog box and return the path to the selected file
@@ -43,9 +44,4 @@ for palabra in tokens:
 
 print('Cantidad de registros: ', contador)
 
-pyperclip.copy(' '.join(str(e + '\n') for e in codigosFlex))
-spam = pyperclip.paste()
-
-input('Codigos copiados en tu portapapeles. Presione ENTER para salir  ....\n')
-
-print(codigosFlex)
+send_meli_shipment_notification(codigosFlex)
