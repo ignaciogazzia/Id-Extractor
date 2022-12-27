@@ -46,6 +46,8 @@ print('Cantidad de registros: ', contador)
 pyperclip.copy(' '.join(str(e + '\n') for e in codigosFlex))
 spam = pyperclip.paste()
 
-input('Codigos copiados en tu portapapeles. Presione ENTER para salir  ....\n')
+input('Codigos copiados en tu portapapeles. Presione ENTER para continuar  ....\n')
 
-print(codigosFlex)
+print(codigosFlex + '\n')
+
+input('Presione ENTER para salir  ....\n')
