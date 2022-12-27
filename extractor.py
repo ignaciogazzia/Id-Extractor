@@ -40,8 +40,7 @@ for palabra in tokens:
     if (palabra.startswith('41')) and len(palabra) > 6 and not (palabra.endswith('Mercado')):
         contador += 1
         codigosFlex.append(palabra)
-        print(palabra)
 
-print('Cantidad de registros: ', contador)
 
 send_meli_shipment_notification(codigosFlex)
+
